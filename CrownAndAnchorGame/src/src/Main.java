@@ -1,5 +1,6 @@
 import java.util.List;
 import java.io.*;
+import java.util.Scanner;
 
 public class Main {
 	
@@ -10,8 +11,15 @@ public class Main {
         Dice d1 = new Dice();
         Dice d2 = new Dice();
         Dice d3 = new Dice();
+		
+		Scanner scan=new Scanner(System.in);
+        System.out.println("Welcome to DICE Game");
+        System.out.println("Enter name of player:");
+        String playerName=scan.next();
+        System.out.println("Enter bet value to play:");
+        int amount=scan.nextInt();
+        Player player = new Player(playerName, amount);
 
-        Player player = new Player("Fred", 100);
         Game game = new Game(d1, d2, d3);
         List<DiceValue> cdv = game.getDiceValues();
 
