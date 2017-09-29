@@ -33,12 +33,13 @@ public class Main {
             
             for (int i = 0; i < 100; i++)
             {
-            	String name = "Fred";
-            	int balance = 100;
+            	String name = playerName;
+            	int balance = amount;
             	int limit = 0;
                 player = new Player(name, balance);
                 player.setLimit(limit);
-                int bet = 5;
+				System.out.println("Place your bet:");
+                int bet=scan.nextInt();
 
                 System.out.println(String.format("Start Game %d: ", i));
                 System.out.println(String.format("%s starts with balance %d, limit %d", 
@@ -61,12 +62,12 @@ public class Main {
                     
                     if (winnings > 0) {
 	                    System.out.printf("%s won %d, balance now %d\n\n",
-	                    		player.getName(), winnings, player.getBalance());
+	                    		player.getName(), winnings, player.getBalance()+bet);
 	                	winCount++; 
                     }
                     else {
 	                    System.out.printf("%s lost, balance now %d\n\n",
-	                    		player.getName(), player.getBalance());
+	                    		player.getName(), player.getBalance()-bet);
 	                	loseCount++;
                     }
                     
