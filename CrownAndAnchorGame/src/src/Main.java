@@ -13,12 +13,17 @@ public class Main {
         Dice d3 = new Dice();
 		
 		Scanner scan=new Scanner(System.in);
-        System.out.println("Welcome to DICE Game");
-        System.out.println("Enter name of player:");
+        System.out.println("Welcome to CROWN AND ANCHOR Game");
+        System.out.print("Enter name of player:");
         String playerName=scan.next();
-        System.out.println("Enter bet value to play:");
+		System.out.print("Enter age of player:");
+        int age=scan.nextInt();
+        System.out.print("Enter amount to play:(50 to 200)");
         int amount=scan.nextInt();
-        Player player = new Player(playerName, amount);
+		System.out.println("Place your bet(5 to 100):");
+        int bet=scan.nextInt();
+        
+		Player player = new Player(playerName, amount, age);
 
         Game game = new Game(d1, d2, d3);
         List<DiceValue> cdv = game.getDiceValues();
@@ -36,17 +41,15 @@ public class Main {
             	String name = playerName;
             	int balance = amount;
             	int limit = 0;
-                player = new Player(name, balance);
+                player = new Player(name, balance, age);
                 player.setLimit(limit);
-				System.out.println("Place your bet:");
-                int bet=scan.nextInt();
 
                 System.out.println(String.format("Start Game %d: ", i));
                 System.out.println(String.format("%s starts with balance %d, limit %d", 
                 		player.getName(), player.getBalance(), player.getLimit()));
 
                 int turn = 0;
-                while (player.balanceExceedsLimitBy(bet) && player.getBalance() < 200)
+                while (player.balanceExceedsLimitBy(bet) && player.getBalance() < 200 && player.getBalance() >= 5)
                 {
                     turn++;                    
                 	DiceValue pick = DiceValue.getRandom();
@@ -67,7 +70,7 @@ public class Main {
                     }
                     else {
 	                    System.out.printf("%s lost, balance now %d\n\n",
-	                    		player.getName(), player.getBalance()-bet);
+	                    		player.getName(), player.getBalance());
 	                	loseCount++;
                     }
                     
