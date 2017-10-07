@@ -1,5 +1,6 @@
 import java.util.List;
 import java.io.*;
+import java.util.Scanner;
 
 public class Main {
 	
@@ -10,8 +11,21 @@ public class Main {
         Dice d1 = new Dice();
         Dice d2 = new Dice();
         Dice d3 = new Dice();
+		
+			Scanner scan=new Scanner(System.in);
+			System.out.println("Welcome to CROWN AND ANCHOR Game");
+			System.out.print("Enter name of player:");
+			String playerName=scan.next();
+			System.out.print("Enter age of player:");
+			int age=scan.nextInt();
+			System.out.print("Enter amount to play:(50 to 200)");
+			int amount=scan.nextInt();
+			
+			Player player = new Player(playerName, amount, age);
 
-        Player player = new Player("Fred", 100);
+			Game game = new Game(d1, d2, d3);
+			List<DiceValue> cdv = game.getDiceValues();
+
         Game game = new Game(d1, d2, d3);
         List<DiceValue> cdv = game.getDiceValues();
 
