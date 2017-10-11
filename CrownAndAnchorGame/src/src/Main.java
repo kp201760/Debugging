@@ -13,18 +13,20 @@ public class Main {
         Dice d3 = new Dice();
 		
 		int option=0;
-		while(option==0)
+		while(option==0)// To run again
 		{
-		
+			// User Interaction implementation
 			Scanner scan=new Scanner(System.in);
+			System.out.println("________________________________");
 			System.out.println("Welcome to CROWN AND ANCHOR Game");
+			System.out.println("________________________________");
 			System.out.print("Enter name of player:");
 			String playerName=scan.next();
 			System.out.print("Enter age of player:");
 			int age=scan.nextInt();
-			System.out.print("Enter amount to play:(50 to 200)");
+			System.out.print("Enter amount to play(50 to 200):");
 			int amount=scan.nextInt();
-			System.out.println("Place your bet(5 to 100):");
+			System.out.print("Place your bet(5 to 100):");
 			int bet=scan.nextInt();
 			
 			Player player = new Player(playerName, amount, age);
@@ -53,7 +55,7 @@ public class Main {
 							player.getName(), player.getBalance(), player.getLimit()));
 
 					int turn = 0;
-					while (player.balanceExceedsLimitBy(bet) && player.getBalance() < 200 && player.getBalance() > 5)
+					while (player.balanceExceedsLimitBy(bet) && player.getBalance() < 200 && player.getBalance() >= 5)
 					{
 						turn++;                    
 						DiceValue pick = DiceValue.getRandom();
@@ -88,12 +90,13 @@ public class Main {
 				System.out.println(String.format("Win count = %d, Lose Count = %d, %.2f", winCount, loseCount, (float) winCount/(winCount+loseCount)));
 				totalWins += winCount;
 				totalLosses += loseCount;
-
-				//String ans = console.readLine();
-				//if (ans.equals("q")) break;
+				System.out.println("Press q to quit from game.");
+				String ans = console.readLine();
+				if (ans.equals("q")) break;
 			} //while true
 			
 			System.out.println(String.format("Overall win rate = %.1f%%", (float)(totalWins * 100) / (totalWins + totalLosses)));
+			
 			System.out.println("Do you want to play again? (Press 0 to continue) (1 for to exit)");
 			option=scan.nextInt();
 		}
