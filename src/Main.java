@@ -35,6 +35,10 @@ public class Main {
 				{
 					int winCount = 0;
 					int loseCount = 0;
+					System.out.println("enter your bet");
+						Scanner input = new Scanner(System.in);
+						
+						int bet = input.nextInt();
 					
 					for (int i = 0; i < 100; i++)
 					{
@@ -42,10 +46,7 @@ public class Main {
 						int limit = 0;
 						player = new Player(name, balance);
 						player.setLimit(limit);
-						System.out.println("enter your bet");
-						Scanner input = new Scanner(System.in);
 						
-						int bet = input.nextInt();
 
 						System.out.println(String.format("Start Game %d: ", i));
 						System.out.println(String.format("%s starts with balance %d, limit %d", 
