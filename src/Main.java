@@ -20,12 +20,14 @@ public class Main {
 			System.out.println("Enter your name ");
 			String name = scan.next();
 			Player player = new Player(name, 100);
+			
 			System.out.println("Enter your age ");
 			int age = scan.nextInt();
+			Game game = new Game(d1, d2, d3);
+				List<DiceValue> cdv = game.getDiceValues();
 			if(age>=18){
 				
-				Game game = new Game(d1, d2, d3);
-				List<DiceValue> cdv = game.getDiceValues();
+				
 
 				int totalWins = 0;
 				int totalLosses = 0;
