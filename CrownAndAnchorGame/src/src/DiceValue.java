@@ -18,11 +18,12 @@ public enum DiceValue {
 	}
 	
 	public String toString(DiceValue value) {
-		return VALUE_REPR_MAP.get(value);
+		return value=VALUE_REPR_MAP.get(value);// Return value to display
+		
 	}
 	
 	public static DiceValue getRandom() {
-		int random = RANDOM.nextInt(VALUE_REPR_MAP.size());//Eradicating problems to display spade
+		int random = RANDOM.nextInt(values().length);//Eradicating problems to display spade
 		return values()[random];
 	}
 	
