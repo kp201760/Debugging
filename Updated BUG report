@@ -1,0 +1,28 @@
+Known bugs
+BUG #1
+ Game does not pay out at correct level.
+When player wins on 1 match, balance does not increase.
+
+BUG #2 
+Player cannot reach betting limit:
+Limit set to 0, but game ends with player still with 5 (dollars) remaining.
+
+BUG #3
+
+Odds in the game do not appear to be correct.
+Crown and Anchor games have an approximate 8% bias to the house. So the win : (win+lose) ratio should approximately equal 0.42. This does not appear to be the case.
+
+Unknown bugs
+
+Bug #1
+According to rules of game a person under the age of 18 years shall not participate in the game or be involved in the dealing or conduct of the game. However, when we were start the game the game starts without any verification which is one of the bug in game so we implement code.
+
+Bug #2
+All the five faces are shown during random picking but the spade is not seen during a roll.
+
+Bug #3
+There is no implementation for user interaction. Fred name is displayed every time when user run the program as well as the amount and bet to play.
+
+Bug #4
+Dice seem to always roll the same after first roll.
+
