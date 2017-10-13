@@ -20,13 +20,13 @@ public class Main {
 			System.out.println("________________________________");
 			System.out.println("Welcome to CROWN AND ANCHOR Game");
 			System.out.println("________________________________");
-			System.out.print("Enter name of player:");
+			System.out.print("Enter name of player:");// User input for player name
 			String playerName=scan.next();
-			System.out.print("Enter age of player:");
+			System.out.print("Enter age of player:");//User input for age
 			int age=scan.nextInt();
-			System.out.print("Enter amount to play(10 to 200):");
+			System.out.print("Enter amount to play(10 to 200):");//User input for balance amount
 			int amount=scan.nextInt();
-			System.out.print("Place your bet(1 to 150):");
+			System.out.print("Place your bet(1 to 150):");//User input for bet amount
 			int bet=scan.nextInt();
 			
 			Player player = new Player(playerName, amount, age);
