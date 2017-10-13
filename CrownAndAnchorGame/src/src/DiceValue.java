@@ -22,7 +22,7 @@ public enum DiceValue {
 	}
 	
 	public static DiceValue getRandom() {
-		int random = RANDOM.nextInt(VALUE_REPR_MAP.size());
+		int random = RANDOM.nextInt(VALUE_REPR_MAP.size());//Eradicating problems to display spade
 		return values()[random];
 	}
 	
